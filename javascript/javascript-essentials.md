@@ -39,7 +39,7 @@ var item = {
     name: "John",
     age: 30,
 };
-console.log(`${item.name} is ${item.age} years old, he is ${item.age > 18 ? "adult" : "menor"}.`);
+console.log(`${item.name} is ${item.age} years old, he is ${item.age > 18 ? "adult" : "minor"}.`);
 // John is 30 years old, he is adult.
 ```
 
@@ -86,8 +86,8 @@ console.log(item.undedinesProperty || "Property doesn't exist"); // Property doe
  * 0 or '' - first value is returned.
  */
 var count = 0;
-console.log(count || 'no data'); // No data
-console.log(count ?? 'no data'); // 0
+console.log(count || "No data"); // No data
+console.log(count ?? "No data"); // 0
 ```
 
 6. Optional Chaining
@@ -174,14 +174,14 @@ console.log(sortedMovies); // Movie-3 (75), Movie-2 (90), Movie-1 (120)
 
 11. Promises
 ```js
-fetch('https://api.adviceslip.com/advice')
+fetch("https://api.adviceslip.com/advice")
     .then(function(response) {
         return response.json();
     }).then(function(data) {
         console.log(data.slip.advice);
     });
 
-fetch('https://api.adviceslip.com/advice')
+fetch("https://api.adviceslip.com/advice")
     .then(res => res.json())
     .then(data => console.log(data.slip.advice));
 ```
@@ -189,7 +189,7 @@ fetch('https://api.adviceslip.com/advice')
 12. Async / Await
 ```js
 async function getAdvice() {
-    const response = await fetch('https://api.adviceslip.com/advice');
+    const response = await fetch("https://api.adviceslip.com/advice");
     const data = await response.json();
     console.log(data.slip.advice);
 }
