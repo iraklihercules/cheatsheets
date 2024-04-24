@@ -53,8 +53,8 @@ export default function App() {
 /**
  * Component
  */
-function Message(props)  {
+function Message({ counter })  {
     return (
-        <p>You have read <strong>{props.counter}</strong> advices.</p>
+        <p>You have read <strong>{counter}</strong> advices.</p>
     );
 }

@@ -16,3 +16,8 @@ $ npm create vite@latest
   }
 }
 ```
+
+## Rules
+Components:
+1. When we write components as functions, they must start with uppercase letter.
+2. The function needs to return some markup.

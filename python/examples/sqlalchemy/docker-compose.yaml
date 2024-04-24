@@ -1,0 +1,61 @@
+version: "3.9"
+
+services:
+    app:
+        build:
+          context: ./app
+          dockerfile: Dockerfile
+          args:
+            NON_PRIVILEGED_USER_NAME: developer
+        container_name: sql-alchemy-app
+        volumes:
+            - ./app/src:/app
+        links:
+            - postgres
+        networks:
+            - sql-alchemy
+    postgres:
+        image: postgres:16.1
+        container_name: sql-alchemy-postgres
+        environment:
+            POSTGRES_DB: tutorial
+            POSTGRES_USER: user1
+            POSTGRES_PASSWORD: pass1
+        ports:
+            - "5432:5432"
+        volumes:
+            - data:/var/lib/postgresql/data
+        networks:
+            - sql-alchemy
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
+            interval: 20s
+            timeout: 30s
+            retries: 5
+            start_period: 30s
+    pgadmin:
+        image: dpage/pgadmin4:latest
+        container_name: sql-alchemy-pgadmin
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@example.com
+            PGADMIN_DEFAULT_PASSWORD: pass2
+            PGADMIN_LISTEN_PORT: 80
+        ports:
+            - "3001:80"
+        volumes:
+            - data:/var/lib/postgresql/data
+        depends_on:
+            postgres:
+                condition: service_healthy
+        links:
+            - postgres
+        networks:
+            - sql-alchemy
+
+networks:
+    sql-alchemy:
+        name: sql-alchemy-network
+        driver: bridge
+
+volumes:
+  data:

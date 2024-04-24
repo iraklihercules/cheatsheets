@@ -59,6 +59,12 @@ stop:
 	docker compose stop
 
 .PHONY:
+reload:
+	docker compose down
+	docker compose build
+	docker compose up -d
+
+.PHONY:
 shell:
 	docker exec -it -u node react-app bash
 ```
