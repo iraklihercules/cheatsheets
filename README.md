@@ -5,6 +5,10 @@
 
 ### Python
 * [Python Fundamentals](./python/python-fundamentals.md)
+* [Python Design Patterns](./python/python-design-patterns.md)
+* (Example) [Data Structures](./python/examples/data-structures)
+* (Example) [Algorithms](./python/examples/algorithms)
+* (Example) [Design Patterns](./python/examples/design-patterns)
 * (Example) [SQLAlchemy App](./python/examples/sqlalchemy/)
 
 ### Docker
