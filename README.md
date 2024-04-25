@@ -6,6 +6,7 @@
 ### Python
 * [Python Fundamentals](./python/python-fundamentals.md)
 * [Python Design Patterns](./python/python-design-patterns.md)
+* [Python Methods](./python/python-methods.md)
 * (Example) [Data Structures](./python/examples/data-structures)
 * (Example) [Algorithms](./python/examples/algorithms)
 * (Example) [Design Patterns](./python/examples/design-patterns)
@@ -24,6 +25,8 @@
 * [FastAPI](./fastapi/fastapi.md)
 * (Example) [Books](./fastapi/examples/books.py)
 
+### Links
+* [Markdown cheatsheet & Docs](https://www.markdownguide.org/cheat-sheet/)
 
 Todo:
 * Logical reasoning tests
