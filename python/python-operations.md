@@ -1,4 +1,4 @@
-# Python Methods & Operators
+# Python Operators
 
 ### Numeric Operations
 [Source](https://docs.python.org/3/library/stdtypes.html)
